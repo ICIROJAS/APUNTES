@@ -1,0 +1,482 @@
+##### **Apuntes**
+
+
+
+
+
+import 'figura.dart';
+
+void main(List<String> args) {
+
+ var f1 = Figura.cuadrado(5, 4);
+
+ var f2 = Figura.rectangulo(4, 5);
+
+
+ print("area del rectangulo");
+
+ print("area del cuadrado: ${f1.areaC()}");
+ 
+}
+
+void area(int base,int altura){
+
+ int result = (base = altura);
+
+print(result);
+
+    
+}
+
+void perimetro(int base,int altura) {
+
+int result =(base+altura) * 2;
+
+print(result);
+}
+
+........
+
+
+import 'Animal.dart';
+
+import 'Pato.dart';
+
+import 'caballo.dart';
+
+import 'Animal.dart';
+
+import 'caballo.dart';
+
+import 'Pato.dart';
+
+import 'vaca.dart';
+
+void main(List<String> args) {
+
+ Pato pato1 = Pato();
+
+ pato1.breed = "pekies";
+
+ pato1.quantity = 10;
+
+pato1.showProperties();
+
+print("-" * 20);
+
+ Vaca v1 = Vaca();
+ 
+ v1.breed = "Romagnola";
+
+ v1.quantity = 100;
+
+ v1.showProperties();
+
+ print("-" * 20);
+
+Caballo c1 = Caballo();
+
+c1.breed = "Frisón";
+
+c1.quantity = 15;
+
+c1.showProperties();
+
+}
+
+
+
+## **Instancias**
+
+///* propiedad de instancia
+
+
+///* propiedad de clase
+
+
+ void main(List<String> args) {
+ 
+ Mueble n1 = Mueble();
+
+n1.showCouter();
+
+Mueble.showCouterStatic();
+
+print("-" * 2);
+
+Mueble n2 = Mueble();
+
+n2.showCouter();
+
+Mueble.showCouterStatic();
+
+}
+
+class Mueble {}
+
+// propiedad de instancia
+
+int couter = 0;
+
+///* propiedad de clase
+
+static int couterStatic = 0;
+
+
+Mueble(){
+
+couter++;
+
+ couterStatic++;
+
+// metodo de instancia<
+
+void showCouter(){<
+
+print("propiedad de instancia:$couter");
+}
+// metodo de clase
+
+static void showCouterStatic(){
+
+print("propiedad de clase $couterStatic");
+<}
+}
+
+
+.............
+
+
+class Vehiculo {<
+
+ String? _color ;
+
+int? _velocidad;
+
+Vehiculo(this._color, this._velocidad){
+
+ print("Constructor padre Vehiculo");
+
+}
+set color(String? color) => this._color =color;
+
+set velocidad(int? velocidad) => this._velocidad = velocidad;
+
+
+k>int maxVelocidad() => _velocidad! * 2;
+
+
+void showVeiculo() {
+
+print("Color: $_color");
+
+ print("Velocidad: $_velocidad");
+
+}
+
+}
+
+class Carro extends Vehiculo {
+
+ String?_marca;
+
+ String?_tipo;
+
+Carro(super._color, super._velocidad,this._marca,this._tipo) {>
+
+print("Constructor hijo carro");
+
+}
+
+
+
+
+ Carro.tipo(super._color,super._velocidad,this._marca,this._tipo) 
+ 
+ 
+ {
+ 
+ 
+ 
+
+ print("Constructor nombrado hijo carro");
+ 
+ }
+
+
+ @override
+
+ >void showTipo(){
+
+super.showVeiculo();
+
+ print("Tipo $_tipo");
+
+ print("Marca:$_marca");
+}
+void showTipo2() {
+
+super.showVeiculo();
+
+>print("Tipo $_tipo");<
+}
+
+}
+
+
+.......
+
+//class Animal con atributos nombre y sonido<
+
+>class Animal{
+
+String nombre = "";
+
+
+>String sonido = "";
+
+}
+
+void reporte (Animal a) {
+
+print("Nombre: $nombre");
+
+print("Sonido: $sonido");
+
+} */
+
+
+
+class Animal{
+
+String? breed;<
+
+ int? quantity;
+ 
+
+String? Tipo;
+
+
+void showProperties(){
+
+
+ print("Name: $breed");
+
+print("Quantity : $quantity");
+
+}
+
+ }
+
+...........
+
+
+ //? crear la clase animal con las siguientes propiedades.
+
+//? tipo de animal y cantidad.
+
+//? crear un metodo de instancia que muestre
+
+//? el tipo de animal y la cantidad 
+
+//? crear un metodo de clase que muetre
+
+//? la cantidad de tipos de animales de la granja.
+
+//? crear instancias de la clase animal y
+
+//? mostrar la cantidad de tipo de animales
+
+//? de la granja.
+
+//? cuantos animales hay en la granja?.
+
+
+void main(List<String> args) {}
+
+Animal a1 = Animal("Vaca", 10);
+
+a1.showAnimal();
+
+Animal.showAnimalstatic();
+
+
+
+
+
+class Animal {
+
+//* propiedad de instancia
+
+
+String? tipoAnimal
+
+int? cantidad;
+
+//*proiedad de clase
+
+static int couterStatic = 0;
+}
+
+
+
+......
+
+##### **Mixins** 
+
+
+
+void main(List<String> args) {
+
+  Dolphin flippy = Dolphin();
+  
+  flippy.swin();
+}
+
+class Animal {
+
+  Animal() {
+  
+  
+    print("Animal contructor");
+    
+    
+  }
+  
+}
+
+class Mammal extends Animal {
+
+  Mammal() {
+  
+    print("Mammal Constructor");
+    
+  }
+  
+}
+
+class Bird extends Animal {
+
+  Bird() {
+  
+    print("Bird Constructor");
+    
+  }
+  
+}
+
+class Fish extends Animal {
+
+  Fish() {
+  
+    print("Fish constructor");
+    
+  }
+  
+}
+
+class Walker {}
+
+class Flyer {}
+
+abstract class Swimmer {
+
+  void swin() {
+  
+    print("Swimming");
+  }
+  
+}
+
+class Dolphin extends Mammal with Swimmer {
+
+  Dolphin() {
+  
+    print("Dolphin Constructor");
+  }
+  
+}
+
+class Duck {}
+
+class Shark {}
+
+
+##### **//Abstract clasee**
+
+
+abstract class Vehiculo {
+
+  String? _color;
+  
+  int? _velocidad;
+
+  Vehiculo(this._color, this._velocidad) {
+  
+    print("Constructor principal");
+  }
+
+  set color(String? color) => this._color = color;
+  
+  set velocidad(int? velocidad) => this._velocidad = velocidad;
+
+  String? get color => _color;
+  
+  int? get Velocidad => _velocidad;
+
+  int maxVelocidad() => _velocidad! * 2;
+
+  void showVehiculo() {
+  
+    print("Color: $_color");
+    
+    print("Velocidad: $_velocidad");
+  }
+}
+
+class Carro extends Vehiculo {
+
+  String? _marca;
+  
+  String? _tipo;
+
+  Carro(super._color, super._velocidad, this._marca, this._tipo) {
+    print("Constructor hijo carro");
+  }
+
+  @override
+  void showVehiculo() {
+  
+    super.showVehiculo();
+    
+    print("Marca: $_marca");
+    print("Tipo: $_tipo");
+  }
+}
+
+class Motocicleta extends Vehiculo {
+
+  String? _marca;
+  String? _tipo;
+
+  Motocicleta(super._color, super._velocidad, this._marca, this._tipo) {
+  
+    print("Constructor hijo carro");
+  }
+}
+
+void main(List<String> args) {
+
+  //final Vehiculo jeep = Vehiculo("rojo",100); Esto no se puede con abstract
+  
+
+  final Carro jeep = Carro("rojo", 100, "jeep", "chevrer");
+  
+  jeep.showVehiculo();
+  jeep.maxVelocidad();
+
+  final Motocicleta yamaha = Motocicleta("Rojo ", 123, "Elias", "Chevre");
+  
+  yamaha.showVehiculo();
+  
+}
